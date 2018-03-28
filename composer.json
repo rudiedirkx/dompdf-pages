@@ -1,0 +1,21 @@
+{
+    "name": "rdx/dompdf-pages",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rudie Dirkx",
+            "email": "github@hotblocks.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4" : {
+            "rdx\\dompdfpages\\" : "src/"
+        }
+    },
+    "require": {
+        "dompdf/dompdf": "^0.8",
+        "iio/libmergepdf": "^3.0"
+    }
+}

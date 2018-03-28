@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Body merger</title>
+		<style>
+			p {
+				font-size: 20px;
+				margin: 3em 0 0;
+			}
+		</style>
+	</head>
+
+	<!-- Every body will be rendered without the other bodies, and then merged. -->
+
+	<body>
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+		</style>
+
+		<p>This is page 1. It's completely different and separate from the rest.</p>
+	</body>
+
+	<body>
+		<style>
+			@page :first {
+				margin-top: 12em;
+			}
+			body {
+				font-family: serif;
+			}
+			header {
+				position: absolute;
+				top: -12em;
+				height: 12em;
+				background-color: yellow;
+			}
+		</style>
+
+		<header>
+			<p>This is another page 1. Kinda.</p>
+		</header>
+
+		<p>This</p>
+		<p>is</p>
+		<p>a</p>
+		<p>lot</p>
+		<p>of</p>
+		<p>text</p>
+		<p>to</p>
+		<p>generate</p>
+		<p>pages</p>
+		<p>to</p>
+		<p>see</p>
+		<p>how</p>
+		<p>the</p>
+		<p>rest</p>
+		<p>pages</p>
+		<p>can</p>
+		<p>use</p>
+		<p>page 1</p>
+		<p>styling.</p>
+	</body>
+</html>

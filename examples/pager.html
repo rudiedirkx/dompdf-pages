@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>No-script pager</title>
+		<style>
+			header {
+				position: fixed;
+				text-align: right;
+			}
+			p {
+				font-size: 20px;
+				margin: 3em 0 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/php">
+			$pdf->page_script('
+				$font = $fontMetrics->getFont("serif");
+				$pdf->text(10, 10, "I AM NOT HERE B/C NoScriptsProcessor", $font, 20);
+			');
+		</script>
+
+		<header>
+			<dompdf-pager pages="1">%t pages</dompdf-pager>
+		</header>
+		<header>
+			<dompdf-pager pages="2-">%n / %t</dompdf-pager>
+		</header>
+
+		<p>Hi there!</p>
+		<p>This</p>
+		<p>is</p>
+		<p>a</p>
+		<p>lot</p>
+		<p>of</p>
+		<p>text</p>
+		<p>to</p>
+		<p>illustrate</p>
+		<p>pages</p>
+		<p>in</p>
+		<p>a</p>
+		<p>PDF,</p>
+		<p>with</p>
+		<p>a</p>
+		<p>DomPdf</p>
+		<p>pager,</p>
+		<p>without</p>
+		<p>DomPdf</p>
+		<p>scripting.</p>
+		<p>The</p>
+		<p>magic</p>
+		<p>is</p>
+		<p>in</p>
+		<p>the</p>
+		<p>&lt;dompdf-pager&gt;</p>
+		<p>tag.</p>
+		<p>Pretty</p>
+		<p>cool,</p>
+		<p>right?</p>
+	</body>
+</html>
