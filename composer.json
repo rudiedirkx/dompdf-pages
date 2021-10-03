@@ -15,7 +15,7 @@
         }
     },
     "require": {
-        "dompdf/dompdf": "^0.8",
-        "iio/libmergepdf": "^3.0"
+        "dompdf/dompdf": "^0.8|^1.0",
+        "iio/libmergepdf": "^3.0|^4.0"
     }
 }
