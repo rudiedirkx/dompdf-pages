@@ -8,14 +8,13 @@
             "email": "github@hotblocks.nl"
         }
     ],
-    "minimum-stability": "dev",
     "autoload": {
         "psr-4" : {
             "rdx\\dompdfpages\\" : "src/"
         }
     },
     "require": {
-        "dompdf/dompdf": "^0.8|^1.0",
+        "dompdf/dompdf": "^2.0",
         "iio/libmergepdf": "^3.0|^4.0"
     }
 }
