@@ -3,5 +3,7 @@
 namespace rdx\dompdfpages;
 
 interface ProcessorInterface {
-	public function pre( $html );
+
+	public function pre( string $html ) : string;
+
 }

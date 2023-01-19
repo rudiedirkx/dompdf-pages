@@ -3,7 +3,15 @@
 namespace rdx\dompdfpages;
 
 abstract class Processor implements ProcessorInterface {
-	public function pre( $html ) {
+
+	protected DompdfInterface $dompdf;
+
+	public function setDompdf( DompdfInterface $dompdf ) : void {
+		$this->dompdf = $dompdf;
+	}
+
+	public function pre( string $html ) : string {
 		return $html;
 	}
+
 }

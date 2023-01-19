@@ -13,7 +13,7 @@ class EverythingRedProcessor extends Processor {
 		}
 	}
 
-	public function pre( $html ) {
+	public function pre( string $html ) : string {
 		return preg_replace('#(<style.*?>)#', "$1\n* { background-color: {$this->color}; }\n\n", $html);
 	}
 }

@@ -10,7 +10,7 @@ class ProcessableDompdf extends DompdfDecorator {
 	/**
 	 * @var Processor[][]
 	 */
-	protected $processors = [];
+	protected array $processors = [];
 
 	public function __construct( DompdfInterface $pdf, array $processors = [] ) {
 		parent::__construct($pdf);
@@ -23,7 +23,7 @@ class ProcessableDompdf extends DompdfDecorator {
 		}
 	}
 
-	public function addProcessor( Processor $processor, $weight = 0 ) {
+	public function addProcessor( Processor $processor, int $weight = 0 ) {
 		$this->processors[$weight][] = $processor;
 		return $this;
 	}
@@ -32,6 +32,7 @@ class ProcessableDompdf extends DompdfDecorator {
 		ksort($this->processors);
 		foreach ( $this->processors as $processors ) {
 			foreach ( $processors as $processor ) {
+				$processor->setDompdf($this);
 				$html = $processor->pre($html);
 			}
 		}
