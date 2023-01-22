@@ -15,6 +15,8 @@ class PagerProcessor extends Processor {
 	protected function parseAttributes( $str ) {
 		$attrs = [
 			'pages' => null,
+			'n' => ':n',
+			't' => ':t',
 		];
 
 		if ( $str ) {
@@ -23,9 +25,11 @@ class PagerProcessor extends Processor {
 			$dom->loadXML($html);
 			$el = $dom->firstChild;
 
-			$pages = (string) $el->getAttribute('pages');
-			if ( $pages != '' ) {
-				$attrs['pages'] = $pages;
+			foreach (['pages', 'n', 't'] as $attr) {
+				$value = (string) $el->getAttribute($attr);
+				if ( $value != '' ) {
+					$attrs[$attr] = $value;
+				}
 			}
 		}
 
@@ -62,8 +66,8 @@ class PagerProcessor extends Processor {
 							$oid = $GLOBALS[$name][$pageNum] ?? null;
 							if ($oid !== null) {
 								$pdf->objects[$oid]['c'] = strtr($pdf->objects[$oid]['c'], [
-									':n' => $pageNum,
-									':t' => $pageCount,
+									$attributes['n'] => $pageNum,
+									$attributes['t'] => $pageCount,
 								]);
 								$canvas->add_object($oid);
 							}

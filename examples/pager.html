@@ -3,9 +3,12 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>No-script pager</title>
 		<style>
+			body {
+				font-family: sans-serif;
+			}
 			header {
 				position: fixed;
-				text-align: right;
+				right: 0;
 			}
 			p {
 				font-size: 20px;
@@ -23,10 +26,10 @@
 		</script>
 
 		<header>
-			<dompdf-pager pages="1">%t pages</dompdf-pager>
+			<dompdf-pager pages="1" t="x">(x pages)</dompdf-pager>
 		</header>
 		<header>
-			<dompdf-pager pages="2-">%n / %t</dompdf-pager>
+			<dompdf-pager pages="2-" n="n" t="t">(n / t)</dompdf-pager>
 		</header>
 
 		<p>Hi there!</p>
